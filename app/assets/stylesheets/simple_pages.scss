@@ -1,3 +1,64 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#brand {
+  padding: 35px 20px 50px 20px;
+}
+
+#brand a:hover {
+  color: white;
+}
+
+.navbar {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar ul {
+  float: right;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 20px 20px 20px;
+}
+
+.navbar  a {
+  color: grey;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 2000ms;
+  -webkit-transition: color 2000ms;
+}
+
+#navbuttons a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#main-body {
+  padding-top: 100px;
+  text-align: center;
+  background-color: grey;
+  color: black;
+}
+
+.img-responsive {
+  position: relative;
+  margin: auto;
+}
+
+/*Typography*/
+
+h1,
+h2,
+h3,
+p,
+li,
+a {
+  font-family: Arial, sans-serif;
+}
