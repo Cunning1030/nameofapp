@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!")
+Product.destroy_all
+
+Product.create(name: "Crass poster", description: "The nature of your oppression is the aesthetic of our anger", image_url:"crass-nature.jpg", colour:"black and white", price:"10")
+
+Product.create(name: "Dead Kennedys poster", description: "Welcome to 1984", image_url:"dk1984.jpg", colour:"black and tan", price:"10")
+
+Product.create(name: "Sex Pistols poster", description: "Never mind the bans", image_url:"spnevermind.jpg", colour:"black and tan", price:"10")
