@@ -42,6 +42,10 @@
   text-decoration: none;
 }
 
+.item {
+  height: 600px
+}
+
 #main-body {
   padding-top: 100px;
   text-align: center;
@@ -49,9 +53,17 @@
   color: black;
 }
 
+a {
+  transition: color 2000ms;
+  -webkit-transition: color 2000ms;
+}
+
 .img-responsive {
   position: relative;
   margin: auto;
+}
+
+footer {
 }
 
 /*Typography*/
