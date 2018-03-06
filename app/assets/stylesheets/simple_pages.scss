@@ -16,6 +16,7 @@
   width: 100%;
   top: 0;
   z-index: 1;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .navbar ul {
@@ -33,8 +34,6 @@
   text-transform: none;
   text-decoration: none;
   letter-spacing: 0.05em;
-  transition: color 2000ms;
-  -webkit-transition: color 2000ms;
 }
 
 #navbuttons a:hover {
@@ -42,15 +41,10 @@
   text-decoration: none;
 }
 
-.item {
-  height: 600px
-}
-
-#main-body {
-  padding-top: 100px;
-  text-align: center;
-  background-color: grey;
-  color: black;
+body {
+  background: image-url('graffiti.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
@@ -58,12 +52,64 @@ a {
   -webkit-transition: color 2000ms;
 }
 
+.item {
+  height: 600px
+}
+
+#main-body {
+  padding-top: 20px;
+  text-align: center;
+  background-color: grey;
+  opacity: 0.9;
+  color: black;
+}
+
+#main-body a {
+  color: black;
+}
+
+#main-body a:hover {
+  color: white;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.carousel {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .img-responsive {
   position: relative;
   margin: auto;
 }
 
+.carousel-control {
+  margin-top: -69px;
+}
+
 footer {
+  height: 50px;
+  background-color: #515151;
+  margin-top: -1px;
+  padding-top: 17px;
+  padding-left: 20px;
+  width: 100%;
+  border-radius: 0px 0px 20px 20px;
+}
+
+footer p {
+  float: left;
+}
+
+.fb-share-button {
+  float: right;
+  clear: none;
+  padding-right: 20px;
+}
+
+#earthtime {
+  padding-top: 20px;
 }
 
 /*Typography*/

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nameofapp</title>
+    <title>FMM</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -42,11 +42,30 @@
 
     <%= yield %>
 
-      <footer>
-        &copy; 2018 Free Market Music
-      </footer>
-
     </div> <!-- /container-fluid -->
 
+      <footer>
+
+        <p>&copy; 2018 Free Market Music</p>
+
+        <div class="fb-share-button" data-href="http://relaxed-euclid-e8a29f.bitballoon.com/" data-layout="button" data-size="small" data-mobile-iframe="true">
+          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frelaxed-euclid-e8a29f.bitballoon.com%2F&amp;src=sdkpreparse">Share on Facebook</a>
+          <div id="fb-root"></div>
+        </div>
+
+      </footer>
+
+
+
   </body>
+
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk')); // facebook button
+  </script>
+
 </html>
