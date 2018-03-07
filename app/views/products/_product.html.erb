@@ -3,7 +3,7 @@
   <h1><%= product.name %></h1>
   <p><%= product.description %></p>
   <p><%= product.size %></p>
-  <strong><%= product.price %></strong><br>
+  <p>$ <%= product.price %></p><br>
   <td><%= link_to 'Show', product %></td>
   <td><%= link_to 'Edit', edit_product_path(product) %></td>
   <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

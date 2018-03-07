@@ -7,9 +7,8 @@
         Order # <%= order.id %>:
         <%= link_to order.product.name, order.product %>
       </h1>
-      <p><%= order.product.description %></p>
-      <strong>$ <%= order.product.price %></strong>
-      <a><%= link_to 'Show', order %></a>
+      <%= image_tag(order.product.image_url, class: "img-responsive") %>
+      <p></p>
     </div><!-- /col -->
   <% end %>
 </div>
