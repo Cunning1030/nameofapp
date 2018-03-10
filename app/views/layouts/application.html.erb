@@ -24,6 +24,14 @@
             <li><a><%= link_to 'Contact', simple_pages_contact_path %></a></li>
             <li><a><%= link_to 'Products', products_path %></a></li>
             <li><a><%= link_to 'Orders', orders_path %></a></li>
+            <li>
+              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+                <%= form.text_field :q, id: 'q', value: params[:q], id: "search-box", class: "form-control" %>
+            </li>
+            <li>
+                <%= form.submit 'Search', id: "search-button", class: "btn btn-default" %>
+              <% end %>
+            </li>
           </ul>
         </nav>
         <nav class="navbar-header">
