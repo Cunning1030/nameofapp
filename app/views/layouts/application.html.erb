@@ -18,19 +18,25 @@
           <a><%= link_to "Free Market Music", simple_pages_landing_page_path %></a>
         </nav>
         <nav class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right" id="navbuttons">
-            <li><a><%= link_to "Home", root_path %></a></li>
-            <li><a><%= link_to 'About', simple_pages_about_path %></a></li>
-            <li><a><%= link_to 'Contact', simple_pages_contact_path %></a></li>
-            <li><a><%= link_to 'Products', products_path %></a></li>
-            <li><a><%= link_to 'Orders', orders_path %></a></li>
-            <li><a><%= link_to 'Users', users_path %></a></li>
+          <ul class="nav navbar-nav" id="navbuttons">
             <li>
               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
                 <%= form.text_field :q, id: 'q', value: params[:q], id: "search-box", class: "form-control" %>
             </li>
             <li>
                 <%= form.submit 'Search', id: "search-button", class: "btn btn-default" %>
+              <% end %>
+            </li>
+            <li><a><%= link_to "Home", root_path %></a></li>
+            <li><a><%= link_to 'Contact', simple_pages_contact_path %></a></li>
+            <li><a><%= link_to 'Products', products_path %></a></li>
+            <li><a><%= link_to 'Orders', orders_path %></a></li>
+            <li><a><%= link_to 'Users', users_path %></a></li>
+            <li id="in-n-out">
+              <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>
               <% end %>
             </li>
           </ul>

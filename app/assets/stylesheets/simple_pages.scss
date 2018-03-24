@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #in-n-out {
   margin-top: 10px;
-  float: right;
 }
 
 #brand {
@@ -29,7 +28,7 @@
 }
 
 .navbar li {
-  display: inline-block;
+  display: inline-table;
   padding: 0px 20px 0px 20px;
   margin-top: -20px;
 }
@@ -70,7 +69,7 @@ a {
 }
 
 #main-body {
-  padding-top: 110px;
+  padding-top: 230px;
   margin-top: -40px;
   text-align: center;
   background-color: grey;
