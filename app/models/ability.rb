@@ -6,7 +6,14 @@ class Ability
     if user.admin?
       can :manage, :all
     else
+      can :read, :all
+      cannot :manage, User
       can :manage, User, id: user.id
+      cannot :index, User
+      can [:read, :create], Comment
+      cannot [:destroy], Comment
+      can [:read], Product
+      cannot [:edit, :create, :update, :destroy], Product
     end
 
     # Define abilities for the passed in user here. For example:
