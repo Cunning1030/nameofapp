@@ -10,8 +10,8 @@ describe Product do
       product.comments.create!(rating: 3, user: user, body: "Better on recycled paper!")
       product.comments.create!(rating: 5, user: user, body: "Danzig!")
     end
-    it "returns the average rating of all comments" do
-      expect(product.comments.average(:rating)).to eq "3"
+    it "returns the average_rating of all comments" do
+      expect(product.average_rating).to eq 3.0
     end
   end
 
@@ -20,5 +20,4 @@ describe Product do
       expect(Product.new(description: "just another brick in the wall")).not_to be_valid
     end
   end
-
 end
