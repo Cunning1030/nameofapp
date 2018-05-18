@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 
-  # @user = FactoryBot.create(:user)
+  @user = FactoryBot.build(:user)
 
-  let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testicle") }
+  # let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testicle") }
 
   describe 'GET #show' do
     context 'when a user is logged in' do
