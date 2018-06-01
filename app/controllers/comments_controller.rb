@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @comments = Comment.paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
       if @comment.save
+        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js
