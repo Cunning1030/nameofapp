@@ -1,7 +1,7 @@
 <% @comments = @product.comments.paginate(:page => params[:page], :per_page => 5) %>
 
 <div class="product-reviews">
-  <% @comments.each do |comment| %>
+  <% @comments.order('created_at DESC').each do |comment| %>
     <%= render comment %>
   <% end %>
 
