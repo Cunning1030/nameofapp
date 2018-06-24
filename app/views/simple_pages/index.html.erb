@@ -4,3 +4,9 @@
 
 
 <p id="earthtime">Earth <%= Time.now %></p>
+
+<h3>--Word Of The Hour--</h3>
+
+<% cache 'word-of-the-hour', expires_in: 2.seconds do %>
+  <h2><%= %w(MUSIC ARTISTS INSTRUMENTS MEMORABILIA CRAFT-SUPPLIES DIY FREE).sample %></h2>
+<% end %><br><br>
