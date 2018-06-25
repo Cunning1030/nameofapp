@@ -2,17 +2,13 @@
 
 <h1>Our Products</h1>
 
-
-
-  <div class="container-fluid">
-    <div class="row">
-      <% cache(cache_key_for_products) do %>
-        <%= render @products %>
-      <% end %>
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <% cache(cache_key_for_products) do %>
+      <%= render @products %>
+    <% end %>
   </div>
-
-<br>
+</div><br>
 
 <%= will_paginate @comments %><br><br>
 
