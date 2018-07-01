@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 
-  @user = FactoryBot.build(:user)
+  # @user = FactoryBot.build(:user)
 
-  # let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testify") }
+  let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testify") }
 
   describe 'GET #show' do
     context 'when a user is logged in' do
@@ -14,6 +14,7 @@ describe UsersController, type: :controller do
       it 'loads correct user details' do
         get :show, params: { id: user.id }
         expect(assigns(:user)).to eq user
+        expect(response).to be_ok
       end
     end
 
@@ -23,5 +24,7 @@ describe UsersController, type: :controller do
          expect(response).to redirect_to(root_path)
        end
     end
+
   end
+  
 end
