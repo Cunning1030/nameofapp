@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   root 'simple_pages#index'
 
+  post 'payments/create'
+
   mount ActionCable.server => '/cable'
 
 end

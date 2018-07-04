@@ -1,4 +1,5 @@
 FactoryBot.define do
+  
   sequence(:rating) { rand(1..5)}
   sequence(:body) { |n| "So good I could eat #{n}" }
 

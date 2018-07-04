@@ -1,4 +1,5 @@
 FactoryBot.define do
+  
   sequence(:name) { |n| "product#{n}" }
   sequence(:description) { |n| "description#{n}" }
   sequence(:image_url) { |n| "product#{n}.jpg" }
