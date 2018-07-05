@@ -4,16 +4,21 @@ describe UsersController, type: :controller do
 
   # @user = FactoryBot.build(:user)
 
-  let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testify") }
+  #let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testify") }
+  let(:user) { Factorybot.create(:user) }
 
   describe 'GET #index' do
 
     context 'when a user is logged in' do
 
-      it "can view user index" do
+      before do
         sign_in user
+      end
+
+      it "can view user index" do
         get :index
-        expect(response).to redirect_to(root_path)
+        expect(response).to be_ok
+        expect(response).to render_template('index')
       end
 
     end
@@ -22,7 +27,7 @@ describe UsersController, type: :controller do
 
       it "cannot view user index" do
         get :index
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(new_user_session_path)
       end
 
     end
@@ -98,7 +103,7 @@ describe UsersController, type: :controller do
 
       it "deletes the user" do
         get :destroy, params: { id: user.id }
-        expect { User.destroy(user: user) }.to change { User.count }.by(-1)
+        expect { delete :destroy, params: { id: user.id } }.to change(User.count).by(-1)
       end
 
     end

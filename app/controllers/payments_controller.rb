@@ -23,11 +23,14 @@ class PaymentsController < ApplicationController
       )
 
       if charge.paid
-        order = Order.create(order_params)
+        order = Order.create(
+          product_id: @product.id,
+          user_id: @user.id,
+          total: @product.price
+        )
         UserMailer.order_placed(current_user, order).deliver_now
+        flash[:notice] = "payment was processed successfully"
       end
-
-    end
 
     rescue Stripe::CardError => e
       # The card has been declined
@@ -38,12 +41,4 @@ class PaymentsController < ApplicationController
 
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
-
-    def order_params
-      params.permit(:product_id, :user_id, :total)
-    end
+end
