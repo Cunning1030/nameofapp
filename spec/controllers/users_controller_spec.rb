@@ -2,10 +2,8 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 
-  # @user = FactoryBot.build(:user)
-
   #let(:user) { User.create!(first_name: "Moopy", last_name: "Mooperson", email: "test@test.com", password: "testify") }
-  let(:user) { Factorybot.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe 'GET #index' do
 
@@ -102,8 +100,7 @@ describe UsersController, type: :controller do
       end
 
       it "deletes the user" do
-        get :destroy, params: { id: user.id }
-        expect { delete :destroy, params: { id: user.id } }.to change(User.count).by(-1)
+        expect { delete :destroy, params: { id: user.id } }.to change(User, :count).by(-1)
       end
 
     end

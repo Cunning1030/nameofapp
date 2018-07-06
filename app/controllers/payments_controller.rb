@@ -30,6 +30,7 @@ class PaymentsController < ApplicationController
         )
         UserMailer.order_placed(current_user, order).deliver_now
         flash[:notice] = "payment was processed successfully"
+        redirect_to product_path(@product)
       end
 
     rescue Stripe::CardError => e

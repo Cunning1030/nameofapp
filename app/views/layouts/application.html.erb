@@ -55,11 +55,11 @@
 
     <div class="container-fluid" id="main-body">
 
-    <%= yield %>
-
     <% if notice %>
       <h1 id="notice" class="alert alert-info"><%= notice %></h1>
     <% end %>
+
+    <%= yield %>
 
     <% if alert %>
       <h1 id="alert" class="alert alert-info"><%= alert %></h1>
