@@ -1,12 +1,79 @@
-<h1>Welcome To The</h1>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-<%= image_tag("freemarket-text.jpg", class: "img-responsive") %>
+  <!-- Indicators -->
+
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+
+  <!-- <div class="carousel-inner" role="listbox">
+    <% @products.each do |product| %>
+    <div class="item <%= " active" if product == @products.first %>">
+      <%= image_tag(product.image_url, class: "img-responsive") %>
+      <div class="carousel-caption">
+        <%= product.name %>
+      </div>
+    </div>
+
+    <% end %>
+  </div> -->
+
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+      <%= image_tag("ungovernable.jpg", class: "img-responsive") %>
+      <div class="carousel-caption">
+        <h1>Welcome to Freemarket Music</h1>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("longlive.jpg", class: "img-responsive") %>
+      <div class="carousel-caption">
+        <h1>A place where D.I.Y. thrives</h1>
+      </div>
+    </div>
+
+    <div class="item">
+      <%= image_tag("mosh.jpg", class: "img-responsive") %>
+      <div class="carousel-caption">
+        <h1>and the voice of the people is heard</h1>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+
+</div>
+
+<!-- <div class="landing-page-body"
+
+  <h1>Welcome To The</h1>
+
+  <%= image_tag("freemarket-text.jpg", class: "img-responsive") %>
 
 
-<p id="earthtime">Earth <%= Time.now %></p>
+  <p id="earthtime">Earth <%= Time.now %></p>
 
-<h3>--Word Of The Hour--</h3>
+  <h3> - Word Of The Hour - </h3>
 
-<% cache 'word-of-the-hour', expires_in: 2.seconds do %>
-  <h2><%= %w(MUSIC ARTISTS INSTRUMENTS MEMORABILIA CRAFT-SUPPLIES DIY FREE).sample %></h2>
-<% end %><br><br>
+  <% cache 'word-of-the-hour', expires_in: 2.seconds do %>
+    <h2><%= %w(MUSIC ARTISTS INSTRUMENTS MEMORABILIA CRAFT-SUPPLIES DIY FREE).sample %></h2>
+  <% end %><br><br> -->
+
+</div>

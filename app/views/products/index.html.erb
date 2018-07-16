@@ -1,6 +1,9 @@
 <p></p>
 
 <h1>Our Products</h1>
+<% if signed_in? && current_user.admin? %>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>
 
 <div class="container-fluid">
   <div class="row">
@@ -11,5 +14,3 @@
 </div><br>
 
 <%= will_paginate @comments %><br><br>
-
-<%= link_to 'New Product', new_product_path %>

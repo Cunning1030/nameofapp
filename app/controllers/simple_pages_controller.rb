@@ -1,6 +1,8 @@
 class SimplePagesController < ApplicationController
 
   def index
+    @featured_product = Product.first  # now unused
+    @products = Product.limit(3)
   end
 
   def about
@@ -14,11 +16,6 @@ class SimplePagesController < ApplicationController
     @email = params[:email]
     @message = params[:message]
     UserMailer.contact_form(@email, @name, @message).deliver_now
-  end
-
-  def landing_page
-    @featured_product = Product.first  # now unused
-    @products = Product.limit(3)
   end
 
 end

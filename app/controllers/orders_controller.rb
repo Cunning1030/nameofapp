@@ -17,6 +17,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    @order.destroy
+    flash[:notice] = "Order deleted successfully!"
+    redirect_to orders_path
   end
 
 end

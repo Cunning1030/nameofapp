@@ -1,14 +1,24 @@
 <h1>Your Orders</h1>
 
 <div class="row">
-  <% @orders.each do |order| %>
-    <div class="col-sm-2 col-md-4">
-      <h1>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order.product %>
-      </h1>
-      <%= image_tag(order.product.image_url, class: "img-responsive") %>
-      <p></p>
-    </div><!-- /col -->
-  <% end %>
-</div><br><br>
+
+    <% @orders.each do |order| %>
+
+      <div class="col-sm-2 col-md-4" id="pending-orders">
+
+        <%= link_to order.product do %>
+          <%= image_tag(order.product.image_url, class: "img-responsive") %>
+          <h4 class="order-label"><%= order.product.name %></h4>
+        <% end %>
+
+        <p>
+          <% if signed_in? && current_user.admin? %>
+            <%= link_to 'Destroy', order.product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </p>
+
+      </div>
+
+    <% end %>
+
+</div>
