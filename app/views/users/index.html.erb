@@ -1,19 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h1>Users</h1>
 
 <% if signed_in? && current_user.admin? %>
-  <h1>Users</h1>
+  <h5><%= link_to 'New User', new_user_path %></h5>
 <% end %>
 
 <% @users.each do |user| %>
   <div class="col-sm-2 col-md-4">
-    <h3><%= user.first_name %></h3>
-    <h3><%= user.last_name %></h3>
+    <h3><%= user.first_name %> <%= user.last_name %></h3>
+    <%= image_tag("silo.png", class: "img-responsive") %><br><br>
     <p><%= link_to 'Show', user %></td>
     <p><%= link_to 'Edit', edit_user_path(user) %></td>
     <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div><!-- /col -->
 <% end %><br>
-
-<% if signed_in? && current_user.admin? %>
-  <%= link_to 'New User', new_user_path %>
-<% end %>
